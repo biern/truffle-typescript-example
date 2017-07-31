@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "test": "tsc truffle.d.ts test/*.ts && truffle test"
+    "test": "tsc && cd src ; truffle test ; cd ../"
   },
   "devDependencies": {
     "@types/chai": "^4.0.1",
