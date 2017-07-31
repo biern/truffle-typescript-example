@@ -1,5 +1,6 @@
 var MetaCoin = artifacts.require("./MetaCoin.sol");
 
+
 import { assert } from "chai";
 
 contract('MetaCoin', function(accounts) {
@@ -9,11 +10,11 @@ contract('MetaCoin', function(accounts) {
     }).then(function(balance) {
       assert.equal(balance.valueOf(), 10000, "10000 wasn't in the first account");
     });
-  });
+  })
   it("should call a function that depends on a linked library", function() {
-    var meta;
-    var metaCoinBalance;
-    var metaCoinEthBalance;
+    var meta: MetaCoinInstance;
+    var metaCoinBalance: number;
+    var metaCoinEthBalance: number;
 
     return MetaCoin.deployed().then(function(instance) {
       meta = instance;
@@ -28,16 +29,16 @@ contract('MetaCoin', function(accounts) {
     });
   });
   it("should send coin correctly", function() {
-    var meta;
+    var meta: MetaCoinInstance;
 
     // Get initial balances of first and second account.
     var account_one = accounts[0];
     var account_two = accounts[1];
 
-    var account_one_starting_balance;
-    var account_two_starting_balance;
-    var account_one_ending_balance;
-    var account_two_ending_balance;
+    var account_one_starting_balance: number;
+    var account_two_starting_balance: number;
+    var account_one_ending_balance: number;
+    var account_two_ending_balance: number;
 
     var amount = 10;
 
