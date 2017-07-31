@@ -1,0 +1,10 @@
+{
+  "scripts": {
+      "test": "tsc truffle.d.ts test/*.ts && truffle test"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.0.1",
+    "@types/mocha": "^2.2.41",
+    "typescript": "^2.4.2"
+  }
+}
