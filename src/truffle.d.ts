@@ -17,5 +17,3 @@ declare interface MetaCoinInstance {
 declare interface MetaCoinContract extends Contract {
   deployed(): Promise<MetaCoinInstance>
 }
-
-declare var assert: Chai.Assert;

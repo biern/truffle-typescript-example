@@ -1,5 +1,7 @@
 var MetaCoin = artifacts.require("./MetaCoin.sol") as MetaCoinContract;
 
+import { assert } from "chai";
+
 
 contract('MetaCoin', function(accounts) {
   it("should put 10000 MetaCoin in the first account", function() {
