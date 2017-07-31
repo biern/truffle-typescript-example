@@ -3,11 +3,12 @@ FROM node:7
 RUN apt-get -y update &&\
     apt-get -y upgrade &&\
     apt-get install build-essential -y
-RUN npm install -g truffle
 
 RUN mkdir -p /app
 ADD . /app
-WORKDIR /app/src/
 
-ENTRYPOINT truffle compile
-CMD tail -f /dev/null
+WORKDIR /app/src
+
+ENV PATH "$PATH:/app/src/node_modules/.bin"
+
+CMD yarn --dev && truffle compile && tail -f /dev/null

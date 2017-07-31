@@ -1,6 +1,9 @@
 {
   "scripts": {
-    "test": "tsc && cd src ; truffle test ; cd ../"
+    "test": "tsc && truffle test"
+  },
+  "dependencies": {
+    "truffle": "^3.4.6"
   },
   "devDependencies": {
     "@types/chai": "^4.0.1",
