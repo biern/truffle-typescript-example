@@ -1,5 +1,8 @@
 declare type _contractTest = (accounts: string[]) => void;
-declare function contract(name: string, _contractTest): void;
+declare function contract(name: string, test: _contractTest): void;
+declare interface TransactionMeta {
+  from: string,
+}
 
 declare interface Contract {
   deployed(): Promise<object>,
@@ -7,6 +10,8 @@ declare interface Contract {
 
 declare interface MetaCoinInstance {
   getBalance(account: string): number;
+  getBalanceInEth(account: string): number;
+  sendCoin(account: string, amount: number, meta?: TransactionMeta): Promise<void>;
 }
 
 declare interface MetaCoinContract extends Contract {
