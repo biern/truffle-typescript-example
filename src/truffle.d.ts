@@ -4,8 +4,10 @@ declare interface TransactionMeta {
   from: string,
 }
 
-declare interface Contract {
-  deployed(): Promise<object>,
+declare interface Contract<T> {
+  "new"(): Promise<T>,
+  deployed(): Promise<T>,
+  at(address: string): T,
 }
 
 declare interface MetaCoinInstance {
@@ -14,12 +16,8 @@ declare interface MetaCoinInstance {
   sendCoin(account: string, amount: number, meta?: TransactionMeta): Promise<void>;
 }
 
-declare interface MetaCoinContract extends Contract {
-  deployed(): Promise<MetaCoinInstance>
-}
-
 interface Artifacts {
-  require(name: "./MetaCoin.sol"): MetaCoinContract,
+  require(name: "./MetaCoin.sol"): Contract<MetaCoinInstance>,
 }
 
 declare var artifacts: Artifacts;
