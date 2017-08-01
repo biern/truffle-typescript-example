@@ -4,5 +4,3 @@ RUN apt-get update &&\
     apt-get upgrade -y &&\
     apt-get install build-essential -y
 RUN npm install -g ethereumjs-testrpc
-
-CMD testrpc -h 0.0.0.0 -p 8545
