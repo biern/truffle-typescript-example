@@ -7,8 +7,8 @@ RUN apt-get -y update &&\
 RUN mkdir -p /app
 ADD . /app
 
-WORKDIR /app/src
+WORKDIR /app/contracts
 
-ENV PATH "$PATH:/app/src/node_modules/.bin"
+ENV PATH "$PATH:/app/contracts/node_modules/.bin"
 
 CMD npm install && tail -f /dev/null
