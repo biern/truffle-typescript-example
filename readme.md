@@ -1,4 +1,4 @@
-# What it is?
+# What is it?
 
 Minimal example integration of Truffle + TypeScript + TestRPC run in docker, for writing smart contracts on Ethereum blockchain.
 
